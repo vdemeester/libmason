@@ -11,5 +11,4 @@ install:
 
 script:
   - make validate
-  - make binary
   - make DAEMON_VERSION="all" test
