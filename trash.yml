@@ -12,7 +12,7 @@ import:
 - package: github.com/opencontainers/runc
   version: 7b6c4c418d5090f4f11eee949fdf49afd15838c9
 - package: github.com/docker/engine-api
-  version: a2999dbd3471ffe167f2aec7dccb9fa9b016dcbc
+  version: c9b5a47a3a6fea97d0a2242307ad25a3331ce03b
 - package: golang.org/x/net
   version: 47990a1ba55743e6ef1affd3a14e5bac8553615d
   repo:    https://github.com/golang/net.git

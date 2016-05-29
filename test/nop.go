@@ -285,6 +285,10 @@ func (client *NopClient) NetworkInspect(ctx context.Context, networkID string) (
 	return types.NetworkResource{}, errNoEngine
 }
 
+func (client *NopClient) NetworkInspectWithRaw(ctx context.Context, networkID string) (types.NetworkResource, []byte, error) {
+	return types.NetworkResource{}, []byte{}, errNoEngine
+}
+
 // NetworkList returns the list of networks configured in the docker host
 func (client *NopClient) NetworkList(ctx context.Context, options types.NetworkListOptions) ([]types.NetworkResource, error) {
 	return nil, errNoEngine
@@ -317,6 +321,10 @@ func (client *NopClient) VolumeCreate(ctx context.Context, options types.VolumeC
 // VolumeInspect returns the information about a specific volume in the docker host
 func (client *NopClient) VolumeInspect(ctx context.Context, volumeID string) (types.Volume, error) {
 	return types.Volume{}, errNoEngine
+}
+
+func (client *NopClient) VolumeInspectWithRaw(ctx context.Context, volumeID string) (types.Volume, []byte, error) {
+	return types.Volume{}, []byte{}, errNoEngine
 }
 
 // VolumeList returns the volumes configured in the docker host

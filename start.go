@@ -6,5 +6,5 @@ import (
 
 // ContainerStart starts a new container
 func (h *DefaultHelper) ContainerStart(ctx context.Context, container string) error {
-	return h.client.ContainerStart(context.Background(), container)
+	return h.client.ContainerStart(context.Background(), container, "")
 }

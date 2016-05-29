@@ -13,11 +13,11 @@ type StartClient struct {
 	success bool
 }
 
-func (c *StartClient) ContainerStart(ctx context.Context, container string) error {
+func (c *StartClient) ContainerStart(ctx context.Context, container, checkpoint string) error {
 	if c.success {
 		return nil
 	}
-	return c.NopClient.ContainerStart(ctx, container)
+	return c.NopClient.ContainerStart(ctx, container, checkpoint)
 }
 
 func TestContainerStartErrors(t *testing.T) {
