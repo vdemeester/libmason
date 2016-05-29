@@ -330,7 +330,7 @@ func (client *NopClient) VolumeInspect(ctx context.Context, volumeID string) (ty
 	return types.Volume{}, errNoEngine
 }
 
-// VolumeInspect returns the information about a specific volume in the docker host.
+// VolumeInspectWithRaw returns the information about a specific volume in the docker host and it's raw representation
 func (client *NopClient) VolumeInspectWithRaw(ctx context.Context, volumeID string) (types.Volume, []byte, error) {
 	return types.Volume{}, []byte{}, errNoEngine
 }
