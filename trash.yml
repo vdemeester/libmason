@@ -1,0 +1,20 @@
+package: github.com/libkermit/docker
+
+import:
+- package: github.com/docker/distribution
+  version: d06d6d3b093302c02a93153ac7b06ebc0ffd1793
+- package: github.com/docker/docker
+  version: v1.11.0
+- package: github.com/docker/go-units
+  version: 651fc226e7441360384da338d0fd37f2440ffbe3
+- package: github.com/docker/go-connections
+  version: v0.2.0
+- package: github.com/opencontainers/runc
+  version: 7b6c4c418d5090f4f11eee949fdf49afd15838c9
+- package: github.com/docker/engine-api
+  version: a2999dbd3471ffe167f2aec7dccb9fa9b016dcbc
+- package: golang.org/x/net
+  version: 47990a1ba55743e6ef1affd3a14e5bac8553615d
+  repo:    https://github.com/golang/net.git
+- package: github.com/Sirupsen/logrus
+  version: v0.9.0
