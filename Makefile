@@ -2,7 +2,8 @@
 
 LIBMASON_ENVS := \
 	-e DOCKER_TEST_HOST \
-	-e TESTFLAGS
+	-e TESTFLAGS \
+	-e CODECOV
 
 BIND_DIR := "dist"
 LIBMASON_MOUNT := -v "$(CURDIR)/$(BIND_DIR):/go/src/github.com/vdemeester/libmason/$(BIND_DIR)"
