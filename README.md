@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/vdemeester/libmason.svg?branch=master)](https://travis-ci.org/vdemeester/libmason)
 [![Go Report Card](https://goreportcard.com/badge/github.com/vdemeester/libmason)](https://goreportcard.com/report/github.com/vdemeester/libmason)
 [![License](https://img.shields.io/github/license/vdemeester/libmason.svg)]()
+[![codecov](https://codecov.io/gh/vdemeester/libmason/branch/master/graph/badge.svg)](https://codecov.io/gh/vdemeester/libmason)
 
 Libmason an helper library to build client-driven docker container image
 builder. *It is still very experimental*.
