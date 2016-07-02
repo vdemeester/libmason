@@ -11,7 +11,6 @@ import (
 )
 
 // Config holds builder configuration (like the ImageID and additionnal attributes).
-// FIXME(vdemeester) complete this struct
 type Config struct {
 	ImageID    string
 	Entrypoint strslice.StrSlice

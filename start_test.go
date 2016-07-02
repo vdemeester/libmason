@@ -5,6 +5,7 @@ import (
 
 	"golang.org/x/net/context"
 
+	"github.com/docker/engine-api/types"
 	"github.com/vdemeester/libmason/test"
 )
 
@@ -13,11 +14,11 @@ type StartClient struct {
 	success bool
 }
 
-func (c *StartClient) ContainerStart(ctx context.Context, container, checkpoint string) error {
+func (c *StartClient) ContainerStart(ctx context.Context, container string, options types.ContainerStartOptions) error {
 	if c.success {
 		return nil
 	}
-	return c.NopClient.ContainerStart(ctx, container, checkpoint)
+	return c.NopClient.ContainerStart(ctx, container, options)
 }
 
 func TestContainerStartErrors(t *testing.T) {

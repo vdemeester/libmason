@@ -5,7 +5,6 @@ import (
 
 	"golang.org/x/net/context"
 
-	"github.com/docker/engine-api/types"
 	"github.com/vdemeester/libmason/test"
 )
 
@@ -14,11 +13,11 @@ type TagClient struct {
 	success bool
 }
 
-func (c *TagClient) ImageTag(ctx context.Context, image, newReference string, options types.ImageTagOptions) error {
+func (c *TagClient) ImageTag(ctx context.Context, image, newReference string) error {
 	if c.success {
 		return nil
 	}
-	return c.NopClient.ImageTag(ctx, image, newReference, options)
+	return c.NopClient.ImageTag(ctx, image, newReference)
 }
 
 func TestTagImageErrors(t *testing.T) {

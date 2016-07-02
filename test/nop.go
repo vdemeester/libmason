@@ -3,6 +3,7 @@ package test
 import (
 	"errors"
 	"io"
+	"time"
 
 	"golang.org/x/net/context"
 
@@ -29,21 +30,6 @@ func NewNopClient() *NopClient {
 // ClientVersion returns the version string associated with this instance of the Client
 func (client *NopClient) ClientVersion() string {
 	return ""
-}
-
-// CheckpointCreate creates a checkpoint from the given container with the given name
-func (client *NopClient) CheckpointCreate(ctx context.Context, container string, options types.CheckpointCreateOptions) error {
-	return errNoEngine
-}
-
-// CheckpointDelete deletes the checkpoint with the given name from the given container
-func (client *NopClient) CheckpointDelete(ctx context.Context, container string, checkpointID string) error {
-	return errNoEngine
-}
-
-// CheckpointList returns the volumes configured in the docker host.
-func (client *NopClient) CheckpointList(ctx context.Context, container string) ([]types.Checkpoint, error) {
-	return []types.Checkpoint{}, errNoEngine
 }
 
 // ContainerAttach attaches a connection to a container in the server
@@ -142,7 +128,7 @@ func (client *NopClient) ContainerResize(ctx context.Context, container string, 
 }
 
 // ContainerRestart stops and starts a container again
-func (client *NopClient) ContainerRestart(ctx context.Context, container string, timeout int) error {
+func (client *NopClient) ContainerRestart(ctx context.Context, container string, timeout *time.Duration) error {
 	return errNoEngine
 }
 
@@ -157,12 +143,12 @@ func (client *NopClient) ContainerStats(ctx context.Context, container string, s
 }
 
 // ContainerStart sends a request to the docker daemon to start a container
-func (client *NopClient) ContainerStart(ctx context.Context, container string, checkpoint string) error {
+func (client *NopClient) ContainerStart(ctx context.Context, container string, options types.ContainerStartOptions) error {
 	return errNoEngine
 }
 
 // ContainerStop stops a container without terminating the process
-func (client *NopClient) ContainerStop(ctx context.Context, container string, timeout int) error {
+func (client *NopClient) ContainerStop(ctx context.Context, container string, timeout *time.Duration) error {
 	return errNoEngine
 }
 
@@ -262,7 +248,7 @@ func (client *NopClient) ImageSave(ctx context.Context, images []string) (io.Rea
 }
 
 // ImageTag tags an image in the docker host
-func (client *NopClient) ImageTag(ctx context.Context, image, ref string, options types.ImageTagOptions) error {
+func (client *NopClient) ImageTag(ctx context.Context, image, ref string) error {
 	return errNoEngine
 }
 

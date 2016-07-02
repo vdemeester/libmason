@@ -16,14 +16,21 @@ import (
 
 var _ Helper = &DefaultHelper{}
 
+// DockerClient defines methods a docker client should provide to libmason.
+// It's simply Container & Image methods from docker client.APIClient.
+type DockerClient interface {
+	client.ContainerAPIClient
+	client.ImageAPIClient
+}
+
 // DefaultHelper is a client-side builder base helper implementation.
 type DefaultHelper struct {
-	client       client.APIClient
+	client       DockerClient
 	outputWriter io.Writer
 }
 
 // NewHelper creates a new Helper from a docker client
-func NewHelper(cli client.APIClient) *DefaultHelper {
+func NewHelper(cli DockerClient) *DefaultHelper {
 	return &DefaultHelper{
 		client:       cli,
 		outputWriter: os.Stdout,
