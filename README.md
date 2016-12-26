@@ -1,4 +1,4 @@
-# Libmason
+# Libmason 🐳 👷 
 [![GoDoc](https://godoc.org/github.com/vdemeester/libmason?status.png)](https://godoc.org/github.com/vdemeester/libmason)
 [![Build Status](https://travis-ci.org/vdemeester/libmason.svg?branch=master)](https://travis-ci.org/vdemeester/libmason)
 [![Go Report Card](https://goreportcard.com/badge/github.com/vdemeester/libmason)](https://goreportcard.com/report/github.com/vdemeester/libmason)
